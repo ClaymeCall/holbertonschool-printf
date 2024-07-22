@@ -6,7 +6,7 @@
 typedef struct print_cpl
 {
 	char *flag;
-	char (*f)(va_list args);
+	char (*f)(void *buffer);
 
 } print_cpl;
 
