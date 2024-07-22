@@ -2,11 +2,11 @@
 
 /** 
  * function_picker - return the correct function to print the arg with
- * @char: conversion specifier
+ * @s: conversion specifier
  *
  * Return: pointer to the correct function
  */
-void (*function_picker(char *s)(void *buffer))
+void (*function_picker(char *s))(void *buffer)
 {
 	int i = 0;
 
@@ -14,14 +14,12 @@ void (*function_picker(char *s)(void *buffer))
 	{
 		{'c', print_c},
 		{'s', print_s},
-		{'i', print_i},
-		{'d', print_d},
 		{NULL, NULL}
 	}
 
-	while (ops[i].op != NULL)
+	while (flag[i].flag != NULL)
 	{
-		if (*s == *flag[i].flag && s[1] != '\0')
+		if (*s == *flag[i].flag && s[1] == '\0')
 			return(flag[i].f);
 
 		i++;
