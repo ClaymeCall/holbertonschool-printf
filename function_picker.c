@@ -6,7 +6,7 @@
  *
  * Return: pointer to the correct function
  */
-void (*function_picker(char *s)(va_list args))
+void (*function_picker(char *s)(void *buffer))
 {
 	int i = 0;
 
