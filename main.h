@@ -12,5 +12,5 @@ typedef struct print_cpl
 } print_cpl;
 
 int _printf(const char *format, ...);
-void (*function_picker(char *s)(va_list args));
+void (*function_picker(char *s))(va_list args);
 #endif
