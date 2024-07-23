@@ -6,7 +6,7 @@
  *
  * Return: pointer to the correct function
  */
-void (*function_picker(char *s))(void *buffer)
+void (*function_picker(char s))(void *buffer)
 {
 	int i = 0;
 
@@ -14,12 +14,12 @@ void (*function_picker(char *s))(void *buffer)
 	{
 		{'c', print_c},
 		{'s', print_s},
-		{NULL, NULL}
-	}
+		{'\0', NULL}
+	};
 
-	while (flag[i].flag != NULL)
+	while (flag[i].flag != '\0')
 	{
-		if (*s == *flag[i].flag && s[1] == '\0')
+		if (s == flag[i].flag)
 			return(flag[i].f);
 
 		i++;
