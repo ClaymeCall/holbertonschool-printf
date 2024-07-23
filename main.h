@@ -13,6 +13,7 @@ typedef struct print_cpl
 } print_cpl;
 
 int _printf(const char *format, ...);
+int test_printf(const char *format, void *buffer);
 void (*function_picker(char *s))(va_list args);
 
 /** Prototypes for all type printer functions */
