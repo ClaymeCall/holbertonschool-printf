@@ -6,7 +6,8 @@
  *
  *Return : void.
  */
-void print_c(void *buffer)
+void print_c(va_list args)
 {
-	write(1, buffer, 1);
+	char c = (char)va_arg(args, int);
+	write(1, &c, 1);
 }

@@ -1,15 +1,17 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * main - Tests the whole logic of the printf functions for printing a char.
  *
  * Return: 0
  */
-int maint(void)
+int main(void)
 {
-	char c = 'U';
+	char c = 'w';
 
-	_printf("%c", c);
+	int i = printf("U %c U", c);
+	printf("\n%d", i);
 
-	return (0)
+	return (0);
 }

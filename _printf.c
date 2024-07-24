@@ -9,19 +9,42 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
+	int print_len = 0;
 	int i = 0;
-	unsigned int arg_count = arg_counter(format);
 
-	va_start (args, arg_count);
-	
-	if (format)
+	va_start(args, format);
+
+	if (format == NULL)
 		return (0);
 
-	while (format[i])
+	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
-			function_picker(format[i + 1])
+		{
+			if (format[i + 1] == '\0')
+				break;
+
+			else if(format[i + 1] == '%')
+			{
+				write(1, "%", 1);
+				i++;
+				print_len++;
+			}
+			else 
+			{
+				i++;
+				function_picker(format[i])(args);
+				print_len++;
+			}
+		}
+		else
+		{
+			write(1, &format[i], 1);
+			print_len++;
+		}
+		i++;
 	}
 
-	
+	va_end(args);
+	return (print_len);
 }

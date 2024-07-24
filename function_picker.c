@@ -6,17 +6,16 @@
  *
  * Return: pointer to the correct function
  */
-void (*function_picker(char *s))(va_list buffer)
+void (*function_picker(char s))(va_list args)
 {
 	int i = 0;
 
 	print_cpl flag[] = 
 	{
-		{"c", print_c},
-		{"s", print_s},
-		{"%", print_prcnt},
-		{NULL, NULL}
-	}
+		{'c', print_c},
+		{'s', print_s},
+		{'\0', NULL}
+	};
 
 	while (flag[i].flag != '\0')
 	{
@@ -26,4 +25,5 @@ void (*function_picker(char *s))(va_list buffer)
 		i++;
 	}
 
+	return (NULL);
 }

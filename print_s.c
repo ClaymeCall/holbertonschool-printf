@@ -6,12 +6,12 @@
  *
  * Return: void
  */
-void print_s(va_list buffer)
+void print_s(va_list args)
 {
 	int i = 0;
-	char *str
+	char *str;
 
-	str = va_arg(buffer, char *);
+	str = va_arg(args, char *);
 
 	while (str[i])
 		i++;
