@@ -6,8 +6,15 @@
  *
  *Return : void.
  */
-void print_c(va_list args)
+int print_c(va_list args)
 {
+	if (args != NULL)
+	{
 	char c = (char)va_arg(args, int);
 	write(1, &c, 1);
+
+	return (1);
+	}
+	else
+		return (-1);
 }

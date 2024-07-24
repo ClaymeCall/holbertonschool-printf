@@ -33,8 +33,7 @@ int _printf(const char *format, ...)
 			else 
 			{
 				i++;
-				function_picker(format[i])(args);
-				print_len++;
+				print_len += function_picker(format[i])(args);
 			}
 		}
 		else

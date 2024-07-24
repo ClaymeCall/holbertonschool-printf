@@ -6,20 +6,20 @@
  *
  * Return: void
  */
-void print_s(va_list args)
+int print_s(va_list args)
 {
-	int i = 0;
+	int len = 0;
 	char *str;
 
 	str = va_arg(args, char *);
 
-	while (str[i])
-		i++;
+	while (str[len])
+		len++;
 
 	if (str == NULL)
-		return;
+		return (-1);
 
-	write(1,str,i);
+	write(1,str,len);
 
-	
+	return (len);	
 }
