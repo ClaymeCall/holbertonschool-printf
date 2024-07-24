@@ -17,5 +17,5 @@ void (*function_picker(char *s))(va_list args);
 
 /** Prototypes for all type printer functions */
 void print_c(void *buffer);
-
+void print_s(char *str);
 #endif
