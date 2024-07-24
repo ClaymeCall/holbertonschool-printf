@@ -8,15 +8,16 @@
 typedef struct print_cpl
 {
 	char *flag;
-	char (*f)(void *buffer);
+	char (*f)(va_list buffer);
 
 } print_cpl;
 
 int _printf(const char *format, ...);
-void (*function_picker(char s))(va_list args);
-int arg_counter(char *string);
+void (*function_picker(char *s))(va_list buffer);
+/* int arg_counter(char *string); */
 
 /** Prototypes for all type printer functions */
-void print_c(void *buffer);
-
+void print_c(va_list buffer);
+void print_s(va_list buffer);
+void print_prcnt(va_list buffer);
 #endif
