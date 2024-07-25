@@ -5,9 +5,9 @@
 /**
  * main - Tests all expected behaviours of printf.
  *
- * Return: void
+ * Return: 0
  */
-void main(void)
+int main(void)
 {
 	int printf_ret, _printf_ret;
 
@@ -67,4 +67,6 @@ void main(void)
 	_printf_ret = _printf("Char: %c, String: %s, Int: %d", 'B', "World", 321);
 	printf("\nprintf returned: %d, _printf returned: %d\n", printf_ret, _printf_ret);
 	printf("\n----------------------\n");
+
+	return (0);
 }
