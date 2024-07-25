@@ -2,19 +2,14 @@
 
 /**
  *print_c - Function that prints a single char.
- *@buffer: Address to the buffer to be printed, as void *. 
+ *@args: argument passed  as va_list type.
  *
- *Return : void.
+ *Return: the lenght of 1 char.
  */
 int print_c(va_list args)
 {
-	if (args != NULL)
-	{
 	char c = (char)va_arg(args, int);
-	write(1, &c, 1);
 
+	write(1, &c, 1);
 	return (1);
-	}
-	else
-		return (-1);
 }
