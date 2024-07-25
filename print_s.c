@@ -13,11 +13,12 @@ int print_s(va_list args)
 
 	str = va_arg(args, char *);
 
-	while (str[len])
-		len++;
-
 	if (str == NULL)
 		return (-1);
+
+	/* Counting the length of the string */
+	while (str[len])
+		len++;
 
 	write(1, str, len);
 

@@ -9,21 +9,22 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int print_len = 0;
-	int i = 0;
+	int print_len = 0, i = 0;
 
 	va_start(args, format);
 
+	/* Checking if argument is null pointer */
 	if (format == NULL)
 		return (0);
 
+	/* Iterating through format string */
 	while (format[i] != '\0')
 	{
+		/* When a '%' is found, checking all next char cases */
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == '\0')
 				break;
-
 			else if (format[i + 1] == '%')
 			{
 				write(1, "%", 1);
@@ -36,6 +37,7 @@ int _printf(const char *format, ...)
 				print_len += function_picker(format[i])(args);
 			}
 		}
+		/* If no '%' is found, simply print the format string chars */
 		else
 		{
 			write(1, &format[i], 1);
@@ -43,7 +45,6 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-
 	va_end(args);
 	return (print_len);
 }

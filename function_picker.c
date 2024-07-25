@@ -18,6 +18,7 @@ int (*function_picker(char s))(va_list args)
 		{'\0', NULL}
 	};
 
+	/* Iterating through the struct to try and match the char arg */
 	while (conv_spec_matcher[i].conv_spec != '\0')
 	{
 		if (s == conv_spsec_matcher[i].conv_spec)
