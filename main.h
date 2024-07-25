@@ -22,10 +22,11 @@ typedef struct print_cpl
 } print_cpl;
 
 int _printf(const char *format, ...);
-int (*function_picker(char s))(va_list args);
+int (*pick_printer(char s))(va_list args);
 
 /** Prototypes for all type printer functions */
 int print_c(va_list args);
 int print_s(va_list args);
+int print_prcnt(va_list args);
 int print_n(va_list args);
 #endif
