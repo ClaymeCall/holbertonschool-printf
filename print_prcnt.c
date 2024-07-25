@@ -6,7 +6,7 @@
  *
  *Return: the length of 1 char.
  */
-int print_c(va_list args)
+int print_prcnt(va_list args)
 {
 	/* Casting the arg as void because we don't use it*/
 	(void)args;
