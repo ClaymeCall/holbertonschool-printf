@@ -4,6 +4,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stddef.h>
+#include <stdlib.h>
 
 typedef struct print_cpl
 {
@@ -14,9 +15,9 @@ typedef struct print_cpl
 
 int _printf(const char *format, ...);
 int (*function_picker(char s))(va_list args);
-/* int arg_counter(char *string); */
 
 /** Prototypes for all type printer functions */
 int print_c(va_list args);
 int print_s(va_list args);
+int print_n(va_list args);
 #endif

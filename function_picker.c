@@ -14,6 +14,8 @@ int (*function_picker(char s))(va_list args)
 	{
 		{'c', print_c},
 		{'s', print_s},
+		{'i', print_n},
+		{'d', print_n},
 		{'\0', NULL}
 	};
 

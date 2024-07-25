@@ -11,14 +11,17 @@ int print_n(va_list args)
 {	
 	long int i = 0;
 	long int len = 0;
+	int minus_len = 0;
 	long int div = 10;
 	long int number = va_arg(args, int);
 	char *digit_list;
 
+	if (number == 0)
+		return(write(1,"0",1));
 
 	if (number < 0) 
 	{
-		len += write(1,"-",1);
+		minus_len += write(1,"-",1);
 		number *= -1;
 	}
 
@@ -32,6 +35,9 @@ int print_n(va_list args)
 	div /= 10;
 	digit_list = malloc(len * sizeof(char));
 
+	if (digit_list == NULL)
+		return(-1);
+
 	while (i < len)
 	{
 		digit_list[i] = ((number / div) % 10) + '0';
@@ -41,7 +47,7 @@ int print_n(va_list args)
 
 	write (1, digit_list, len);
 	free(digit_list);
-	return (len);
+	return (len + minus_len);
 
 
 }
