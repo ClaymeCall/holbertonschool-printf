@@ -11,5 +11,5 @@ int print_prcnt(va_list args)
 	/* Casting the arg as void because we don't use it*/
 	(void)args;
 
-	return(write(1, "%", 1));
+	return (write(1, "%", 1));
 }

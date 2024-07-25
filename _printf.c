@@ -26,8 +26,8 @@ int _printf(const char *format, ...)
 		{
 			/* Getting the correct printer function for the format */
 			printer_func = pick_printer(format[++i]);
-			
-			/** 
+
+			/**
 			 * If an invalid char was given to pick_printer(),
 			 * return error code -1.
 			 */
