@@ -1,6 +1,6 @@
 #include "main.h"
 
-/** 
+/**
  * function_picker - return the correct function to print the arg with
  * @s: conversion specifier
  *
@@ -10,8 +10,7 @@ int (*function_picker(char s))(va_list args)
 {
 	int i = 0;
 
-	print_cpl flag[] = 
-	{
+	print_cpl conv_spec_matcher[] =	{
 		{'c', print_c},
 		{'s', print_s},
 		{'i', print_n},
@@ -19,11 +18,10 @@ int (*function_picker(char s))(va_list args)
 		{'\0', NULL}
 	};
 
-	while (flag[i].flag != '\0')
+	while (conv_spec_matcher[i].conv_spec != '\0')
 	{
-		if (s == flag[i].flag)
-			return(flag[i].f);
-
+		if (s == conv_spsec_matcher[i].conv_spec)
+			return (conv_spec_matcher[i].f);
 		i++;
 	}
 
