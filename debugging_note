@@ -1,0 +1,56 @@
+1
+ 
+char *s = "UWU";
+     printf("output printf:%%s%%%s%\n", s);
+    _printf("output _printf:%%s%%%s%\n", s);
+
+	output printf:%s%UWU%
+	output _printf:%s%UWU
+
+if (format [i] = '%' && format[i + 1] == '\n')
+
+write (1, '%', 1);
+
+si % ce trouve a la fin avant le new line il s'imprime (si c'est carac null il s'imprime pas ).
+_______________________________________________________
+2
+
+  char *s = "UWU";
+     printf("output printf: %s%%%s",s);
+     printf("\n");
+    _printf("output _printf:%s%%%s", s);
+    return (0);
+
+	output printf: UWU%}�<�� ici les char chelou print sont changeant.
+	output _printf:UWU%
+
+je ne comprend pas celui la ... je pense que le second s est pas capté par _printf 
+
+________________________________________________________
+3
+
+int main(void) 
+{
+     char *s = NULL;
+     printf("output printf: %s",s);
+     printf("\n");
+    _printf("output _printf:%s", s);
+    return (0);
+}
+
+output printf: (null)
+output _printf:
+
+if (str == NULL)
+	str = "(null)";
+
+
+logic ... j'ai été voir dans les exo d'avant .... voir variadic_functions; 2-print_strings juste c'est pas nil mais null quoi car nil veut rien dire 
+
+le code devrait être bon comme ça. 
+
+__________________________________________________
+
+Alors sinon je pense que les case 1 et 3 que j'ai trouvé régleront chacun un de nos problème car c'est juste des erreur de print le case 2 j'ai vraiment du mal a le comprendre et même de savoir si c'est pas une advanced ou que saisje 
+
+
