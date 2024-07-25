@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 
 	/* Checking if argument is null pointer */
 	if (format == NULL)
-		return (0);
+		return (-1);
 
 	/* Iterating through format string */
 	while (format[i] != '\0')
