@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * print_s - print a string
- * @s: string  
+ * print_s - function that's print a string.
+ * @args: arguments passed to va_list type.
  *
- * Return: void
+ * Return: lenght of th eprinted string exclude null char.
  */
 int print_s(va_list args)
 {
@@ -19,7 +19,7 @@ int print_s(va_list args)
 	if (str == NULL)
 		return (-1);
 
-	write(1,str,len);
+	write(1, str, len);
 
-	return (len);	
+	return (len);
 }

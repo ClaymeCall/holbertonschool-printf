@@ -24,13 +24,13 @@ int _printf(const char *format, ...)
 			if (format[i + 1] == '\0')
 				break;
 
-			else if(format[i + 1] == '%')
+			else if (format[i + 1] == '%')
 			{
 				write(1, "%", 1);
 				i++;
 				print_len++;
 			}
-			else 
+			else
 			{
 				i++;
 				print_len += function_picker(format[i])(args);
