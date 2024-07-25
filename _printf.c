@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 			printer_func = pick_printer(format[++i]);
 			
 			/** 
-			 * If an invalid char was given to function picker,
+			 * If an invalid char was given to pick_printer(),
 			 * return error code -1.
 			 */
 			if (printer_func == NULL)
