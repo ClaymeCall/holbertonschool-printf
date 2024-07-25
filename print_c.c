@@ -2,9 +2,9 @@
 
 /**
  *print_c - Function that prints a single char.
- *@args: argument passed  as va_list type.
+ *@args: Argument passed as va_list type.
  *
- *Return: the lenght of 1 char.
+ *Return: the length of 1 char.
  */
 int print_c(va_list args)
 {

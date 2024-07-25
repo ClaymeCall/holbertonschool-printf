@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * print_n - print number in standard output.
- * @args: argument passed as va_list type.
+ * print_n - Prints a number to standard output.
+ * @args: Argument passed as va_list type.
  *
- * Return: the number of char printed.
+ * Return: The number of chars printed, including '-' sign.
  */
 int print_n(va_list args)
 {
