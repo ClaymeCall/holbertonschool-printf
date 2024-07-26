@@ -19,6 +19,9 @@ int (*pick_printer(char c))(va_list args)
 		{'\0', NULL}
 	};
 
+	if (c == '\0')
+		return (NULL);
+
 	/* Iterating through the table to try and match the char arg */
 	while (conv_spec_tbl[i].conv_spec != '\0')
 	{
