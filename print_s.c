@@ -13,11 +13,12 @@ int print_s(va_list args)
 
 	str = va_arg(args, char *);
 
+	if (str == NULL)
+		str = "(null)";
+
 	while (str[len])
 		len++;
 
-	if (str == NULL)
-		return (-1);
 
 	write(1, str, len);
 
