@@ -26,11 +26,13 @@ printf("%c", 'A') -> : A
 _printf("%c", 'A') -> : A  
 printf returned: 1, _printf returned: 1
 
+### String printing :
 Expected output: Hello  
 printf("%s", 'Hello') -> : Hello  
 _printf("%s", 'Hello') -> : Hello  
 printf returned: 5, _printf returned: 5
 
+### Percentage printing :
 Expected output: %  
 printf("%%", '%') -> : %  
 _printf("%%", '%') -> : %  
