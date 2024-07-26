@@ -20,8 +20,18 @@ return (1);
 A
 
 ## Testing
-If I want to test a single character by comparing printf and _printf :
+### Single character printing :
 Expected output: A
 printf("%c", 'A') -> : A
 _printf("%c", 'A') -> : A
+printf returned: 1, _printf returned: 1
+
+Expected output: Hello
+printf("%s", 'Hello') -> : Hello
+_printf("%s", 'Hello') -> : Hello
+printf returned: 5, _printf returned: 5
+
+Expected output: %
+printf("%%", '%') -> : %
+_printf("%%", '%') -> : %
 printf returned: 1, _printf returned: 1 
