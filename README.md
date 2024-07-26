@@ -75,6 +75,9 @@ For ease of use, the associated bash scripts will compile all the function files
 
 As we used the malloc and free functions in our code, we checked for memory leaks using Valgrind, with the following command the executable: `valgrind --leak-check=full ./a.out`
 
+## Flowchart
+![flowchart image](_printf_flowchart.png)
+
 ## Authors
 
 C#24 : [Mael EZANIC](https://github.com/Mezanic) | [Clément CALLEJON](https://github.com/ClaymeCall) | [Christopher SAYAD](https://github.com/Chrissayad31)
