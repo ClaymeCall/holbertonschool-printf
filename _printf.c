@@ -9,13 +9,14 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
+	int (*printer_func)(va_list args);
 	int print_len = 0, i = 0;
 
 	va_start(args, format);
 
 	/* Checking if argument is null pointer */
 	if (format == NULL)
-		return (0);
+		return (-1);
 
 	/* Iterating through format string */
 	while (format[i] != '\0')
@@ -23,19 +24,17 @@ int _printf(const char *format, ...)
 		/* When a '%' is found, checking all next char cases */
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == '\0')
-				break;
-			else if (format[i + 1] == '%')
-			{
-				write(1, "%", 1);
-				i++;
-				print_len++;
-			}
-			else
-			{
-				i++;
-				print_len += function_picker(format[i])(args);
-			}
+			/* Getting the correct printer function for the format */
+			printer_func = pick_printer(format[++i]);
+
+			/**
+			 * If an invalid char was given to pick_printer(),
+			 * return error code -1.
+			 */
+			if (printer_func == NULL)
+				return (-1);
+
+			print_len += printer_func(args);
 		}
 		/* If no '%' is found, simply print the format string chars */
 		else

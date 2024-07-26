@@ -1,5 +1,10 @@
 #!/bin/bash
 
+
+if [$PWD -eq "/holbertonschool_printf"]; then
+	cd tests
+fi
+
 # Define the source files (located in the parent directory)
 SRC_FILES=$(ls ../*.c)
 TEST_FILE="test.c"
