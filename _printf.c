@@ -32,15 +32,16 @@ int _printf(const char *format, ...)
 				return (-1);
 
 			else if (printer_func == print_other)
-				print_len += print_other(args);
-
+			{
+				print_len += (print_other(args));
+				print_len += write(1, &format[i++], 1);
+			}
 			else
 				print_len += printer_func(args);
 		}
 		/* If no '%' is found, simply print the format string chars */
 		else
 			print_len += write(1, &format[i], 1);
-
 		i++;
 	}
 	va_end(args);
