@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * print_s - function that's print a string.
- * @args: arguments passed to va_list type.
+ * print_s - Function that prints a string.
+ * @args: Argument passed as va_list type.
  *
- * Return: lenght of th eprinted string exclude null char.
+ * Return: Length of the printed string, excluding null char.
  */
 int print_s(va_list args)
 {
@@ -19,6 +19,9 @@ int print_s(va_list args)
 	while (str[len])
 		len++;
 
+	/* Counting the length of the string */
+	while (str[len])
+		len++;
 
 	write(1, str, len);
 
