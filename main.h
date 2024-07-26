@@ -29,5 +29,5 @@ int print_c(va_list args);
 int print_s(va_list args);
 int print_prcnt(va_list args);
 int print_n(va_list args);
-int print_other(char c);
+int print_other(va_list args);
 #endif
