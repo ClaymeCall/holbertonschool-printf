@@ -1,2 +1,18 @@
-# holbertonschool-printf
-This repo hosts the code for the printf project of Clément CALLEJON, Mael EZANIC, Christopher SAYAD
+# _printf
+
+## Description
+This project aims to create a function similar to printf. We will name this function _printf
+
+## Compilation/instalation
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
+
+## Requirements
+- '%s' : Prints a string
+- '%c' : Prints a single character
+- '%%' : Prints '%'
+
+## Examples
+
+
+## Testing
+
