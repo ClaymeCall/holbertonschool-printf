@@ -36,9 +36,12 @@ int _printf(const char *format, ...)
 				print_len += 2;
 			i++;
 		}
+		else
+		{
 		/* If no '%' is found, simply print the format string chars */
 		print_len += write(1, &format[i], 1);
 		i++;
+		}
 	}
 	va_end(args);
 	return (print_len);
