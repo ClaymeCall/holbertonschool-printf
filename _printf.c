@@ -24,24 +24,23 @@ int _printf(const char *format, ...)
 			/* Getting the correct printer function for the format */
 			printer_func = pick_printer(format[++i]);
 
-			 /**
-			  * If an invalid char was given to pick_printer(),
-			  * return error code -1.
-			  */
+			/**
+			 * If an invalid char was given to pick_printer(),
+			 * return error code -1.
+			 */
 			if (printer_func == NULL)
 				return (-1);
 
 			else if (printer_func == print_other)
-				print_len += print_other(format[i]);
+				print_len += print_other(args);
 
-			print_len += printer_func(args);
+			else
+				print_len += printer_func(args);
 		}
 		/* If no '%' is found, simply print the format string chars */
 		else
-		{
-			write(1, &format[i], 1);
-			print_len++;
-		}
+			print_len += write(1, &format[i], 1);
+
 		i++;
 	}
 	va_end(args);
