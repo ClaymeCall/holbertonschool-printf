@@ -68,5 +68,14 @@ int main(void)
 	printf("\nprintf returned: %d, _printf returned: %d\n", printf_ret, _printf_ret);
 	printf("\n----------------------\n");
 
+	printf("Testing single %% in format\n");
+	printf("Expected output:\n");
+	printf("printf(\"%%\") -> :");
+	printf_ret = printf("%");
+	printf("\n_printf(\"%%\") -> :");
+	_printf_ret = _printf("%");
+	printf("\nprintf returned: %d, _printf returned: %d\n", printf_ret, _printf_ret);
+	printf("\n----------------------\n");
+
 	return (0);
 }
