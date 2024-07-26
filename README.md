@@ -12,7 +12,16 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 - '%%' : Prints '%'
 
 ## Examples
+char ch = 'A';
 
+_printf("Character: %c\n", ch);
+return (1);
+
+A
 
 ## Testing
-
+If I want to test a single character by comparing printf and _printf :
+Expected output: A
+printf("%c", 'A') -> : A
+_printf("%c", 'A') -> : A
+printf returned: 1, _printf returned: 1 
