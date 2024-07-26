@@ -14,24 +14,24 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 ## Examples
 char ch = 'A';
 
-_printf("Character: %c\n", ch);
+_printf("Character: %c\n", ch);\n
 return (1);
 
 A
 
 ## Testing
 ### Single character printing :
-Expected output: A
-printf("%c", 'A') -> : A
-_printf("%c", 'A') -> : A
+Expected output: A\n
+printf("%c", 'A') -> : A\n
+_printf("%c", 'A') -> : A\n
 printf returned: 1, _printf returned: 1
 
-Expected output: Hello
-printf("%s", 'Hello') -> : Hello
-_printf("%s", 'Hello') -> : Hello
+Expected output: Hello\n
+printf("%s", 'Hello') -> : Hello\n
+_printf("%s", 'Hello') -> : Hello\n
 printf returned: 5, _printf returned: 5
 
-Expected output: %
-printf("%%", '%') -> : %
-_printf("%%", '%') -> : %
+Expected output: %\n
+printf("%%", '%') -> : %\n
+_printf("%%", '%') -> : %\n
 printf returned: 1, _printf returned: 1 
