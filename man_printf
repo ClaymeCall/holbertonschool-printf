@@ -1,0 +1,13 @@
+# NAME :
+_printf
+
+# LIBRARY :
+Standard C library (libc, -lc)
+
+# SYNOPSIS :
+#include <stdio.h>  
+
+int _printf(const char *restrict format, ...);
+
+# DESCRIPTION
+The function _printf() write output to stdout, the standard output stream. It write the output under the control of a format string that specifies how subsequent arguments (or arguments accessed via the variable-length argument facilities of stdarg(3)) are converted for output.
