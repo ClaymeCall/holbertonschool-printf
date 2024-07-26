@@ -12,36 +12,32 @@ int _printf(const char *format, ...)
 	int (*printer_func)(va_list args);
 	int print_len = 0, i = 0;
 
-	va_start(args, format);
 	if (format == NULL)
 		return (-1);
+
+	va_start(args, format);
+
 
 	while (format[i] != '\0')
 	{
 		/* When a '%' is found, checking all next char cases */
 		if (format[i] == '%')
 		{
-			/* Getting the correct printer function for the format */
-			printer_func = pick_printer(format[++i]);
+			i++;
 
-			/**
-			 * If an invalid char was given to pick_printer(),
-			 * return error code -1.
-			 */
-			if (printer_func == NULL)
+			if (format[i] == '\0')
 				return (-1);
+			/* Getting the correct printer function for the format */
+			printer_func = pick_printer(format[i]);
 
-			else if (printer_func == print_other)
-			{
-				print_len += (print_other(args));
-				print_len += write(1, &format[i++], 1);
-			}
-			else
+			if (printer_func != NULL)
 				print_len += printer_func(args);
+			else
+				print_len += 2;
+			i++;
 		}
 		/* If no '%' is found, simply print the format string chars */
-		else
-			print_len += write(1, &format[i], 1);
+		print_len += write(1, &format[i], 1);
 		i++;
 	}
 	va_end(args);

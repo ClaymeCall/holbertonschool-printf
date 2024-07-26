@@ -17,7 +17,7 @@ char ch = 'A';
 _printf("Character: %c\n", ch);  
 return (1);
 
-A
+output -> A
 
 ## Testing
 ### Single character printing :
