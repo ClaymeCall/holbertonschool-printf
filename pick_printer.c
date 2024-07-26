@@ -30,5 +30,8 @@ int (*pick_printer(char c))(va_list args)
 		i++;
 	}
 
-	return (print_other);
+	write(1, "%", 1);
+	write(1, &c, 1);
+
+	return (NULL);
 }
